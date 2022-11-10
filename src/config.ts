@@ -33,6 +33,7 @@ export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/tree/main/examples/docs`;
 
 export const COMMUNITY_INVITE_URL = `https://astro.build/chat`;
+export const BASE_URL_REPO = 'astro_docu1/'
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
@@ -48,13 +49,13 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
 	en: {
 		'Section Header': [
-			{ text: 'Introduction', link: 'en/introduction' },
-			{ text: 'Page 2', link: 'en/page-2' },
-			{ text: 'Page 3', link: 'en/page-3' },
+			{ text: 'Introduction', link: BASE_URL_REPO + 'en/introduction' },
+			{ text: 'Page 2', link: BASE_URL_REPO + 'en/page-2' },
+			{ text: 'Page 3', link: BASE_URL_REPO + 'en/page-3' },
 		],
 		'Another Section': [
-			{ text: 'Page 4', link: 'en/page-4' },
-			{ text: 'Page 5', link: 'en/page-5' },
+			{ text: 'Page 4', link: BASE_URL_REPO + 'en/page-4' },
+			{ text: 'Page 5', link: BASE_URL_REPO + 'en/page-5' },
 		]
 	},
 };
