@@ -56,6 +56,9 @@ export const SIDEBAR: Sidebar = {
 		'Another Section': [
 			{ text: 'Page 4', link: BASE_URL_REPO + 'en/page-4' },
 			{ text: 'Page 5', link: BASE_URL_REPO + 'en/page-5' },
+		],
+		'API': [
+			{  text: 'GetRefOfficeByOfficeCode', link: BASE_URL_REPO + 'en/GetRefOfficeByOfficeCode' }
 		]
 	},
 };
