@@ -1,3 +1,5 @@
+import type { Sidebar } from "./types/SideBar.type";
+
 export const SITE = {
 	title: 'Documentation',
 	description: 'Your website description.',
@@ -33,7 +35,7 @@ export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/tree/main/examples/docs`;
 
 export const COMMUNITY_INVITE_URL = `https://astro.build/chat`;
-export const BASE_URL_REPO = 'astro_docu1/'
+export const BASE_URL_REPO = '';
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
@@ -42,10 +44,7 @@ export const ALGOLIA = {
 	apiKey: 'XXXXXXXXXX',
 };
 
-export type Sidebar = Record<
-	typeof KNOWN_LANGUAGE_CODES[number],
-	Record<string, { text: string; link: string }[]>
->;
+
 export const SIDEBAR: Sidebar = {
 	en: {
 		'Section Header': [
@@ -53,12 +52,8 @@ export const SIDEBAR: Sidebar = {
 			{ text: 'Page 2', link: BASE_URL_REPO + 'en/page-2' },
 			{ text: 'Page 3', link: BASE_URL_REPO + 'en/page-3' },
 		],
-		'Another Section': [
-			{ text: 'Page 4', link: BASE_URL_REPO + 'en/page-4' },
-			{ text: 'Page 5', link: BASE_URL_REPO + 'en/page-5' },
-		],
-		'API': [
-			{  text: 'GetRefOfficeByOfficeCode', link: BASE_URL_REPO + 'en/GetRefOfficeByOfficeCode' }
+		'RefOfficeController': [
+			{ text: 'GetRefOfficeByOfficeCode', link: BASE_URL_REPO + 'en/GetRefOfficeByOfficeCode' },
 		]
 	},
 };
