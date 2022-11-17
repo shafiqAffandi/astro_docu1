@@ -1,9 +1,8 @@
 import React from "react";
 import { getLanguageFromURL } from '../../../languages';
 import { SIDEBAR } from '../../../config';
-import useCollapse from 'react-collapsed';
 import './LeftSideBarReact.css';
-import { Collapse } from 'react-collapse';
+import pkg from 'react-collapse';
 import { Utils } from "../../../utils/utils";
 
 type Props = {
@@ -18,6 +17,7 @@ const setMenuState = (menuState: Array<boolean>) => {
 }
 
 const itemList = (props: Props) => {
+	const { Collapse } = pkg;
 	const { currentPage, pathName } = props;
 	const currentPageMatch = currentPage.endsWith('/')
 		? currentPage.slice(1, -1)
