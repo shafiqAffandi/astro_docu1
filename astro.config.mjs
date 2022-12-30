@@ -8,6 +8,6 @@ export default defineConfig({
     preact(),
     // Enable React for the Algolia search component.
     react()],
-  site: 'https://shafiqaffandi.github.io',
-  base: '/astro_docu1',
+  site: 'https://r3web-server.ad-ins.com',
+  // base: '/doc',
 })

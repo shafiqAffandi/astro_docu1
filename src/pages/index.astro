@@ -1,5 +1,5 @@
-<script is:inline>
+<script is:inline type="module">
 	// Redirect your homepage to the first page of documentation.
 	// If you have a landing page, remove this script and add it here!
-	window.location.pathname = `astro_docu1/en/introduction`;
+	window.location.pathname = `${import.meta.env.ASTRO_BASE_PATH_NAME}/en/introduction`;
 </script>

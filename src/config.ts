@@ -1,7 +1,5 @@
-import type { Sidebar } from "./types/SideBar.type";
-
 export const SITE = {
-	title: 'Documentation',
+	title: 'R3 Guideline Docs',
 	description: 'Your website description.',
 	defaultLanguage: 'en_US',
 };
@@ -35,7 +33,6 @@ export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/tree/main/examples/docs`;
 
 export const COMMUNITY_INVITE_URL = `https://astro.build/chat`;
-export const BASE_URL_REPO = 'astro_docu1/';
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
@@ -44,16 +41,4 @@ export const ALGOLIA = {
 	apiKey: 'XXXXXXXXXX',
 };
 
-
-export const SIDEBAR: Sidebar = {
-	en: {
-		'Section Header': [
-			{ text: 'Introduction', link: BASE_URL_REPO + 'en/introduction' },
-			{ text: 'Page 2', link: BASE_URL_REPO + 'en/page-2' },
-			{ text: 'Page 3', link: BASE_URL_REPO + 'en/page-3' },
-		],
-		'RefOfficeController': [
-			{ text: 'GetRefOfficeByOfficeCode', link: BASE_URL_REPO + 'en/GetRefOfficeByOfficeCode' },
-		]
-	},
-};
+export const SIDEBAR_OPTION = true; // true for expand all; false for collapse all 

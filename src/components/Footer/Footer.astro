@@ -1,4 +1,6 @@
 ---
+import * as CONFIG from '../../config';
+
 type Props = {
 	path: string;
 };
@@ -6,13 +8,32 @@ const { path } = Astro.props as Props;
 ---
 
 <footer>
-	<p>AdIns</p>
+	<div class="footer-wrapper">
+		<div class="left-footer">
+			<p>AdIns - {CONFIG.SITE.title}</p>
+		</div>
+		<div class="right-footer">
+			<p>Powered by Astro 🚀</p>
+		</div>
+	</div>
 </footer>
 
 <style>
 	footer {
 		margin-top: auto;
-		padding: 2rem;
-		border-top: 3px solid var(--theme-divider);
+		padding: 0.5rem;
+		border-top: 1px solid var(--theme-divider);
+	}
+
+	.footer-wrapper {
+		position: relative;
+	}
+
+	.left-footer {
+		 float: left;
+	}
+
+	.right-footer { 
+		float: right;
 	}
 </style>

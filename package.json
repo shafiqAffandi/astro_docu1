@@ -8,6 +8,8 @@
     "start": "astro dev",
     "check": "astro check && tsc",
     "build": "astro build",
+    "prod": "astro build --base /doc",
+    "postbuild": "node ./postbuild.mjs -path /doc",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -23,6 +25,7 @@
     "@types/react": "^17.0.45",
     "@types/react-dom": "^18.0.0",
     "astro": "^1.6.0",
+    "dotenv": "^16.0.3",
     "preact": "^10.7.3",
     "react": "^18.1.0",
     "react-collapse": "^5.1.1",

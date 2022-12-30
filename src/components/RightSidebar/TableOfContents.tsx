@@ -7,6 +7,10 @@ type ItemOffsets = {
 	topOffset: number;
 };
 
+const fontStyle = {
+	fontSize: "0.8rem"
+}
+
 const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 	headings = [],
 }) => {
@@ -32,10 +36,10 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 
 	return (
 		<>
-			<h2 className="heading">On this page</h2>
+			<h2 style={fontStyle} className="heading">On this page</h2>
 			<ul>
 				<li className={`heading-link depth-2 ${activeId === 'overview' ? 'active' : ''}`.trim()}>
-					<a href="#overview">Overview</a>
+					<a style={fontStyle} href="#overview">Overview</a>
 				</li>
 				{headings
 					.filter(({ depth }) => depth > 1 && depth < 4)
@@ -45,7 +49,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 								activeId === heading.slug ? 'active' : ''
 							}`.trim()}
 						>
-							<a href={`#${heading.slug}`}>{heading.text}</a>
+							<a style={fontStyle} href={`#${heading.slug}`}>{heading.text}</a>
 						</li>
 					))}
 			</ul>

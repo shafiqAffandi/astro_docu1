@@ -1,9 +1,10 @@
 import React from "react";
 import { getLanguageFromURL } from '../../../languages';
-import { SIDEBAR } from '../../../config';
+import { SIDEBAR } from "../../../sidebar";
 import './LeftSideBarReact.css';
 import pkg from 'react-collapse';
 import { Utils } from "../../../utils/utils";
+import { SIDEBAR_OPTION } from "../../../config";
 
 type Props = {
 	currentPage: string;
@@ -12,7 +13,7 @@ type Props = {
 
 const setMenuState = (menuState: Array<boolean>) => {
 	const activeId = Utils.GetSessionStorage("act-menu");
-	if(activeId != null) menuState[parseInt(activeId)] = true;
+	if (activeId != null) menuState[parseInt(activeId)] = true;
 	return menuState;
 }
 
@@ -24,24 +25,28 @@ const itemList = (props: Props) => {
 		: currentPage.slice(1);
 	const langCode = getLanguageFromURL(currentPage);
 	const sidebar = SIDEBAR[langCode];
-	let menuState: Array<boolean> = new Array(Object.entries(sidebar).length).fill(false);
+	let menuState: Array<boolean> = new Array(Object.entries(sidebar).length).fill(true);;
+	if (!SIDEBAR_OPTION) {
+		menuState = new Array(Object.entries(sidebar).length).fill(false);
+	}
 	menuState = setMenuState(menuState);
 	let [isOpen, setIsOpen] = React.useState<boolean[]>(menuState);
 
 	let onToggle = (id: number) => setIsOpen(prevState => {
-		console.log(isOpen[id]);
 		return prevState.map((item, idx) => {
 			if (idx == id) {
-				if(!item) {
-					Utils.SetSessionStorage("act-menu", id.toString());
+				if (!SIDEBAR_OPTION) {
+					if(!item) {
+						Utils.SetSessionStorage("act-menu", id.toString());
+					}
+					else {
+						Utils.RemoveSessionStorage("act-menu");
+					}
 				}
-				else {
-					Utils.RemoveSessionStorage("act-menu");
-				}
-				
-				return !item
+				return !item;
 			}
-			return false
+			if (!SIDEBAR_OPTION) return false;
+			return item;
 		})
 	});
 
@@ -51,7 +56,7 @@ const itemList = (props: Props) => {
 				<li key={index} className="flex-left">
 					<div className="nav-group">
 						<ul className="nav-link-parent" onClick={() => onToggle(index)}>
-							<a>{key}</a>
+							<a className="menu-title">{key}</a>
 						</ul>
 						<Collapse isOpened={isOpen[index]}>
 							<ul>
@@ -59,7 +64,7 @@ const itemList = (props: Props) => {
 									const url = pathName + item.link;
 									return (
 										<li key={i} className="nav-link">
-											<a href={url} aria-current={currentPageMatch === item.link ? 'page' : false}>
+											<a className="submenu-title" href={url} aria-current={currentPageMatch === item.link ? 'page' : false}>
 												{item.text}
 											</a>
 										</li>
@@ -71,7 +76,7 @@ const itemList = (props: Props) => {
 				</li>
 			</div>
 		)
-	});	
+	});
 }
 
 export default function LeftSideBarReact(props: Props) {

@@ -80,6 +80,7 @@ nav {
     padding: 6px;
     background-color: #bc2828;
 }
+
 .collapsible .header {
     background-color: #1e0fbf;
     padding: 6px;
@@ -107,4 +108,12 @@ button {
 
 .ReactCollapse--collapse {
     transition: height 500ms;
-  }
+}
+
+.menu-title { 
+    font-size: 0.9rem !important;
+}
+
+.submenu-title {
+    font-size: 0.8rem !important;
+}
