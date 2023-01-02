@@ -12,7 +12,7 @@ export const SIDEBAR: Sidebar = {
 		'Getting Started': [
 			{text: 'Frontend - First Project', link: BASE_MENU_PATH + 'en/development/frontend-first-project'},
 			{text: 'Backend - First Project', link: BASE_MENU_PATH + 'en/development/backend-first-project'},
-			
+			{text: 'ESLint Integration ', link: BASE_MENU_PATH + 'en/development/linter-frontend'},
 		],
 		'Best Practice': [
 			{ text: 'Intro To FE Standarization', link: BASE_MENU_PATH + 'en/best-practice/general-rules-fe' },

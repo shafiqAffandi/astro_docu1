@@ -9,7 +9,7 @@ const argvs = process.argv.slice(2);
 
 if ((argvs[0] === '--p' || argvs[0] === '-path') && argvs[1]) {
   let files = [];
-  const extensions = ['.html', '.css', '.js', '.json']
+  const extensions = ['.html']
   const PRODUCTION_URL = argvs[1]
 
 

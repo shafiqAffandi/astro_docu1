@@ -43,3 +43,6 @@ Review the following messages and see how many of the suggested guidelines they 
 - `fixed bug on landing page`
 - `Changed style`
 - empty commit message
+
+Take a look at example below from [Jotai](https://github.com/pmndrs/jotai/pulls?q=is%3Apr+is%3Aclosed) repository
+![](/assets/jotai-git-msg.png)
